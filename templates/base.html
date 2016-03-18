@@ -146,7 +146,9 @@
                 </form></span>
               </li>
             {% endif %}
+            {% if not HIDE_ARCHIVES_FROM_MENU %}
               <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
