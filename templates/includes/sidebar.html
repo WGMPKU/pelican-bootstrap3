@@ -97,10 +97,22 @@
             {% endif %}
         {% endif %}
 
+        {% if DISPLAY_TOC_ON_SIDEBAR %}
+            <div id="sidebar-toc">
+            {% if article and article.toc %}
+            <h4><i class="fa fa-list fa-lg"></i><span class="icon-label">Table of Contents</span></h4>
+                {{article.toc}}
+            {% endif %}
+            {% if page and page.toc %}
+            <h4><i class="fa fa-list fa-lg"></i><span class="icon-label">Table of Contents</span></h4>
+                {{page.toc}}
+            {% endif %}
+            </div>
+        {% endif %}
+
         {% include 'includes/github.html' %}
         {% include 'includes/twitter_timeline.html' %}
         {% include 'includes/links.html' %}
         {% include 'includes/sidebar-images.html' %}
     </ul>
 </section>
-
