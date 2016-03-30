@@ -1,6 +1,6 @@
 {% macro translations_for(article) %}
 {% if article.translations %}
-<span class="label label-default">Lang</span>
+<span class="label label-default">Language Change To:</span>
 {% for translation in article.translations %}
 	<a href="{{ SITEURL }}/{{ translation.save_as|default(translation.url) }}">{% if LANG_DISPLAY %}{{LANG_DISPLAY[translation.lang]}}
 		{% else %} {{translation.lang}} {% endif %}</a>
