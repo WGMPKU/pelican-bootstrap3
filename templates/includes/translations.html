@@ -2,7 +2,8 @@
 {% if article.translations %}
 <span class="label label-default">Lang</span>
 {% for translation in article.translations %}
-	<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+	<a href="{{ SITEURL }}/{{ translation.save_as|default(translation.url) }}">{% if LANG_DISPLAY %}{{LANG_DISPLAY[translation.lang]}}
+		{% else %} {{translation.lang}} {% endif %}</a>
 {% endfor %}
 {% endif %}
 {% endmacro %}
